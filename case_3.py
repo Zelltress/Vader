@@ -1,6 +1,7 @@
 MAX_MONTH = 12
 
 
+# Функция income_count() возвращает сумму доходов за год
 def income_count():
     income = 0
     for month in range(1, MAX_MONTH + 1):
