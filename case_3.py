@@ -1,10 +1,10 @@
 import ru_local as ru
 
-nomber = int(input(ru.CHOICE))
+number = int(input(ru.CHOICE))
 
 MAX_MONTH = 12
 category = {1: 'Subject', 2: 'Married_couple', 3: 'Parent'}
-choice_ctgr = category.get(nomber)
+choice_ctgr = category.get(number)
 taxes_percent = [0, .1, .15, .25, .28, .33, .35, .396]
 brackets_for_couple = [0, 18150, 73800, 148850, 226850, 405100, 457600]
 brackets_for_subject = [0, 9075, 36900, 89350, 186350, 405100, 406750]
