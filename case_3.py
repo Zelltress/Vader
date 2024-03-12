@@ -31,11 +31,13 @@ def tax_for_married_couple(taxable_money):
     left_money = taxable_money
     for i in range(1, len(brackets_for_couple)):
         if taxable_money > brackets_for_couple[i]:
-            couple_tax += (brackets_for_couple[i] - brackets_for_couple[i - 1]) * taxes_percent[i]
-            left_money -= brackets_for_couple[i] - brackets_for_couple[i - 1]
+            couple_tax += (brackets_for_couple[i] - brackets_for_couple[i-1]) * taxes_percent[i]
+            left_money -= brackets_for_couple[i] - brackets_for_couple[i-1]
         else:
             couple_tax += left_money * taxes_percent[i]
             break
+    if taxable_money > brackets_for_couple[6]:
+        couple_tax += taxes_percent[7] * (taxable_money - brackets_for_couple[6])
     return couple_tax
 
 
@@ -43,13 +45,15 @@ def tax_for_married_couple(taxable_money):
 def tax_for_subject(taxable_money):
     subject_tax = 0
     leftover = taxable_money
-    for j in range(1, len(brackets_for_subject)):
-        if taxable_money > brackets_for_subject[j]:
-            subject_tax += (brackets_for_subject[j] - brackets_for_subject[j - 1]) * taxes_percent[j]
-            leftover -= brackets_for_subject[j] - brackets_for_subject[j - 1]
+    for i in range(1, len(brackets_for_subject)):
+        if taxable_money > brackets_for_subject[i]:
+            subject_tax += (brackets_for_subject[i] - brackets_for_subject[i-1]) * taxes_percent[i]
+            leftover -= brackets_for_subject[i] - brackets_for_subject[i-1]
         else:
-            subject_tax += leftover * taxes_percent[j]
+            subject_tax += leftover * taxes_percent[i]
             break
+    if taxable_money > brackets_for_subject[6]:
+        subject_tax += taxes_percent[7] * (taxable_money - brackets_for_subject[6])
     return subject_tax
 
 

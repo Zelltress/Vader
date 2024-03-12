@@ -6,11 +6,12 @@ def one_parent(taxable_money):
     remains = taxable_money
     for i in range(len(brackets_for_parent)-1):
         if taxable_money > brackets_for_parent[i+1]:
-            parent_tax += taxes_percent[i+1]*(brackets_for_parent[i+1]-brackets_for_parent[i])
-            remains -= brackets_for_parent[i+1]-brackets_for_parent[i]
+            parent_tax += taxes_percent[i+1] * (brackets_for_parent[i+1] - brackets_for_parent[i])
+            remains -= brackets_for_parent[i+1] - brackets_for_parent[i]
         else:
             parent_tax += remains*taxes_percent[i+1]
             break
+    if taxable_money > brackets_for_parent[6]:
+        parent_tax += taxes_percent[7] * (taxable_money - brackets_for_parent[6])
     return parent_tax
 
-print(one_parent(37924))
