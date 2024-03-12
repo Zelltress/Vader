@@ -50,7 +50,7 @@ def tax_for_subject(tax_money):
     leftover = tax_money
     for j in range(1, len(brackets_for_subject)):
         if tax_money > brackets_for_subject[j]:
-            subject_tax += (brackets_for_subject[j]-brackets_for_subject[j-1]*taxes_percent[j])
+            subject_tax += (brackets_for_subject[j]-brackets_for_subject[j-1])*taxes_percent[j]
             leftover -= brackets_for_subject[j]-brackets_for_subject[j-1]
         else:
             subject_tax += leftover*taxes_percent[j]
