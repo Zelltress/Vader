@@ -44,7 +44,7 @@ def tax_for_married_couple(taxable_money):
 
 
 
-# Функция tax_for_married_couple(taxable_money) определяет величину годового налога на субъект
+# Функция определяет величину годового налога на субъект
 def tax_for_subject(tax_money):
     subject_tax = 0
     leftover = tax_money
