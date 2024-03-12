@@ -9,7 +9,15 @@ def income_count():
         sum_of_income += value_in_month
     return sum_of_income
 
+
 # tax_free_count - временное обозначение функции, которая будет вычислять сумму дохода, не облагаемую налогом
+
+def tax_free_count():
+    amount = 0
+    for month in range(1, MAX_MONTH + 1):
+        free_amount_mnth = float(input(f' {ru.FREE_TAX} {ru.INCOME[month]} [USD]: '))
+        amount += free_amount_mnth
+    return amount
 
 
 income = income_count()
