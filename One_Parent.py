@@ -31,7 +31,7 @@ def one_parent(taxable_money):
         else:
             parent_tax += remains*taxes_percent[i]
         break
-    print(parent_tax)
+    print(parent_tax) #gtf
     return parent_tax
 
 if cast == 3:
