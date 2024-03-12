@@ -15,8 +15,8 @@ def income_count():
 def tax_free_count():
     amount = 0
     for month in range(1, MAX_MONTH + 1):
-        free_amount_mnth = float(input(f' {ru.FREE_TAX} {ru.INCOME[month]} [USD]: '))
-        amount += free_amount_mnth
+        free_amnt_mnth = float(input(f' {ru.FREE_TAX} {ru.INCOME[month]} [USD]: '))
+        amount += free_amnt_mnth
     return amount
 
 
