@@ -43,7 +43,6 @@ def tax_for_married_couple(taxable_money):
     return couple_tax
 
 
-
 # Функция определяет величину годового налога на субъект
 def tax_for_subject(tax_money):
     subject_tax = 0
@@ -56,4 +55,3 @@ def tax_for_subject(tax_money):
             subject_tax += leftover*taxes_percent[j]
             break
     return subject_tax
-
