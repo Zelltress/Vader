@@ -26,6 +26,7 @@ income_for_taxes = income - tax_free
 
 taxes_percent = [0, .1, .15, .25, .28, .33, .35, .396]
 brackets_for_couple = [0, 18150, 73800, 148850, 226850, 405100, 457600]
+brackets_for_subject = [0, 9075, 36900, 89350, 186350, 405100, 406750]
 
 
 # Функция tax_for_married_couple(taxable_money) определяет величину годового налога на супружескую пару
@@ -40,3 +41,19 @@ def tax_for_married_couple(taxable_money):
             couple_tax += left_money*taxes_percent[i]
             break
     return couple_tax
+
+
+
+# Функция tax_for_married_couple(taxable_money) определяет величину годового налога на субъект
+def tax_for_subject(tax_money):
+    subject_tax = 0
+    leftover = tax_money
+    for j in range(1, len(brackets_for_subject)):
+        if tax_money > brackets_for_subject[j]:
+            subject_tax += (brackets_for_subject[j]-brackets_for_subject[j-1]*taxes_percent[j])
+            leftover -= brackets_for_subject[j]-brackets_for_subject[j-1]
+        else:
+            subject_tax += leftover*taxes_percent[j]
+            break
+    return subject_tax
+
