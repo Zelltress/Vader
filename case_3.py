@@ -20,6 +20,7 @@ taxes_percent = [0, .1, .15, .25, .28, .33, .35, .396]
 brackets_for_couple = [0, 18150, 73800, 148850, 226850, 405100, 457600]
 
 
+# Функция tax_for_married_couple(taxable_money) определяет величину годового налога на супружескую пару
 def tax_for_married_couple(taxable_money):
     couple_tax = 0
     left_money = taxable_money
