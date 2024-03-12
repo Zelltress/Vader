@@ -15,3 +15,6 @@ def income_count():
 income = income_count()
 tax_free = tax_free_count()
 income_for_taxes = income - tax_free
+
+taxes_percent = [0, .1, .15, .25, .28, .33, .35, .396]
+brackets_for_couple = [0, 18150, 73800, 148850, 226850, 405100, 457600]
