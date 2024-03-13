@@ -1,3 +1,6 @@
+# Part of case-study #3
+# Developers: Ivanova A., Gulakova Y., Ilinykh T., Cherkashina D.
+
 import ru_local as ru
 
 number = int(input(ru.CHOICE))
