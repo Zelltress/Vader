@@ -91,10 +91,13 @@ def main():
     income = income_count() - tax_free_count()
     if choice_ctgr == 'Married_couple':
         print(tax_for_married_couple(income))
+        print(tax_for_married_couple(income)/12)
     elif choice_ctgr == 'Subject':
         print(tax_for_subject(income))
+        print(tax_for_subject(income)/12)
     else:
         print(tax_for_parent(income))
+        print(tax_for_parent(income)/12)
 
 
 if __name__ == '__main__':
